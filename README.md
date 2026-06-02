@@ -10,18 +10,6 @@ O projeto foi desenvolvido utilizando conceitos de matrizes, listas, dicionário
 
 ---
 
-## 🎯 Objetivo
-
-Simular um centro de controle espacial capaz de:
-
-Monitorar parâmetros críticos da missão
-Detectar falhas e anomalias operacionais
-Classificar níveis de risco
-Gerar recomendações automáticas
-Produzir relatórios consolidados da missão
-
----
-
 ## 📊 Parâmetros Monitorados
 
 O sistema acompanha cinco áreas principais:
@@ -40,60 +28,45 @@ Parâmetros:
 
 Os dados da missão são armazenados em uma matriz, onde cada linha representa um ciclo de monitoramento.
 
-Exemplo:
-
-[22, 95, 90, 98, 92]
+Exemplo: [22, 95, 90, 98, 92]
 
 Representando:
 
-Temperatura: 22°C
-Comunicação: 95%
-Energia: 90%
-Oxigênio: 98%
-Estabilidade: 92%
+* Temperatura: 22°C
+* Comunicação: 95%
+* Energia: 90%
+* Oxigênio: 98%
+* Estabilidade: 92%
 
-Para cada ciclo, o sistema:
-
-Analisa todos os parâmetros.
-Classifica cada valor como:
-NORMAL
-ATENÇÃO
-CRÍTICO
-Calcula uma pontuação de risco.
-Determina o status geral do ciclo.
-Gera recomendações automáticas.
+Para cada ciclo, o sistema analisa todos os parâmetros, classifica cada valor como: NORMAL / ATENÇÃO / CRÍTICO, calcula uma pontuação de risco, determina o status geral do ciclo e gera recomendações automáticas.
 
 ---
 
 ## 🧠 Lógica de Classificação
 
-Cada parâmetro recebe uma pontuação:
-
-Status	Pontos
-NORMAL	0
-ATENÇÃO	1
-CRÍTICO	2
+Cada parâmetro recebe uma pontuação, o NORMAL recebe 0 pontos, o ATENÇÃO recebe 1 ponto e o CRÍTICO recebe 2 pontos. 
 
 A soma dos pontos determina a situação do ciclo:
 
-Pontuação Total	Classificação
-0 a 2	MISSÃO ESTÁVEL
-3 a 5	MISSÃO EM ATENÇÃO
-Acima de 5	MISSÃO CRÍTICA
 
+* 0 a 2: MISSÃO ESTÁVEL
+* 3 a 5: MISSÃO EM ATENÇÃO
+* Acima de 5: MISSÃO CRÍTICA
+
+---
 
 ## 🔍 Análises Realizadas
 
 Além da classificação individual dos ciclos, o sistema realiza:
 
-Cálculo das médias dos parâmetros;
-Identificação do ciclo mais crítico;
-Cálculo do risco médio da missão;
-Contagem de ciclos críticos;
-Análise de tendência da missão;
-Identificação da área mais afetada;
-Geração automática de recomendações;
-Emissão de relatório final consolidado.
+* Cálculo das médias dos parâmetros
+* Identificação do ciclo mais crítico
+* Cálculo do risco médio da missão
+* Contagem de ciclos críticos
+* Análise de tendência da missão
+* Identificação da área mais afetada
+* Geração automática de recomendações
+* Emissão de relatório final consolidado
 
 ---
 
@@ -101,11 +74,11 @@ Emissão de relatório final consolidado.
 
 Dependendo dos problemas detectados, o sistema pode sugerir ações como:
 
-Verificar controle térmico da missão;
-Restabelecer comunicação com a base;
-Ativar modo de economia de energia;
-Executar protocolos de suporte à vida;
-Reduzir operações não essenciais.
+* Verificar controle térmico da missão
+* Restabelecer comunicação com a base
+* Ativar modo de economia de energia
+* Executar protocolos de suporte à vida
+* Reduzir operações não essenciais
 
 ---
 
@@ -113,10 +86,16 @@ Reduzir operações não essenciais.
 
 Ao final da execução, o sistema apresenta:
 
-Estatísticas gerais da missão
-Médias operacionais
-Ciclo de maior risco
-Tendência da missão
-Área mais afetada
-Classificação final
-Conclusão operacional
+* Estatísticas gerais da missão
+* Médias dos parâmetros
+* Ciclo mais crítico
+* Tendência da missão
+* Área mais afetada
+* Classificação final
+* Conclusão operacional
+
+---
+
+## 🎬 Demonstração
+
+Vídeo de demonstração prática do sistema: 
