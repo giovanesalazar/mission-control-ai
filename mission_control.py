@@ -146,7 +146,7 @@ def analisar_tendencia(pontuacoes):
 
 
 # Função para identificar a área mais afetada.
-def indentificar_area_mais_afetada(pontuacao_acumulada_areas):
+def identificar_area_mais_afetada(pontuacao_acumulada_areas):
     """ pontuacao_acumulada_areas: Lista com soma de pontos para cada área.
     Retorna o nome da área com maior pontuacao. """
 
@@ -193,7 +193,7 @@ def gerar_relatorio_final(dados, pontuacoes_ciclos, status_por_ciclos, pontuacao
     for i, area in enumerate(areas_monitoradas):
         print(f" {area}: {pontuacao_acumulada_areas[i]} pontos")
 
-    area_afetada = indentificar_area_mais_afetada(pontuacao_acumulada_areas)
+    area_afetada = identificar_area_mais_afetada(pontuacao_acumulada_areas)
     print(f"\nÁrea mais afetada: {area_afetada}\n")
 
     # Classificação final na missão, baseada na média de pontos
