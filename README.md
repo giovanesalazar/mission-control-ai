@@ -40,6 +40,18 @@ Representando:
 
 Para cada ciclo, o sistema analisa todos os parâmetros, classifica cada valor como: NORMAL / ATENÇÃO / CRÍTICO, calcula uma pontuação de risco, determina o status geral do ciclo e gera recomendações automáticas.
 
+As funções presentes no código são:
+* analisar_temperatura
+* analisar_comunicacao
+* analisar_bateria
+* analisar_oxigenio
+* analisar_estabilidade
+* classificar_ciclo
+* gerar_recomendacao_para_ciclo
+* analisar_tendencia
+* identificar_area_mais_afetada
+* gerar_relatorio_final
+
 ---
 
 ## 🧠 Lógica de Classificação
