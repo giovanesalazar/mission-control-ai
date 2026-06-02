@@ -10,7 +10,7 @@ O projeto foi desenvolvido utilizando conceitos de matrizes, listas, dicionário
 
 ---
 
-## 📊 Parâmetros Monitorados
+## 📊 Parâmetros
 
 O sistema acompanha cinco áreas principais:
 
@@ -54,7 +54,7 @@ As funções presentes no código são:
 
 ---
 
-## 🧠 Lógica de Classificação
+## 🧠 Lógica
 
 Cada parâmetro recebe uma pontuação, o NORMAL recebe 0 pontos, o ATENÇÃO recebe 1 ponto e o CRÍTICO recebe 2 pontos. 
 
@@ -110,4 +110,4 @@ Ao final da execução, o sistema apresenta:
 
 ## 🎬 Demonstração
 
-Vídeo de demonstração prática do sistema: 
+Vídeo de demonstração prática do sistema: https://youtu.be/gMkcTyapbNE
