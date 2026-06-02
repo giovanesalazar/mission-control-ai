@@ -54,7 +54,7 @@ def analisar_comunicacao(valor):
     elif valor >= limites["comunicacao"]["atencao_min"]:
         return ("ATENÇÃO", 1, "Comunicação instável")
     else:
-        return ("Crítico", 2, "Comunicação com base em nível crítico")
+        return ("CRÍTICO", 2, "Comunicação com base em nível crítico")
 
 # BATERIA:
 def analisar_bateria(valor):
@@ -63,7 +63,7 @@ def analisar_bateria(valor):
     elif valor >= limites["bateria"]["atencao_min"]:
         return ("ATENÇÃO", 1, "Bateria abaixo do recomendado")
     else:
-        return ("Crítico", 2, "Bateria em nível crítico")
+        return ("CRÍTICO", 2, "Bateria em nível crítico")
 
 # OXIGÊNIO:
 def analisar_oxigenio(valor):
@@ -72,7 +72,7 @@ def analisar_oxigenio(valor):
     elif valor >= limites["oxigenio"]["atencao_min"]:
         return ("ATENÇÃO", 1, "Oxigênio abaixo do ideal")
     else:
-        return ("Crítico", 2, "Oxigênio em nível crítico")
+        return ("CRÍTICO", 2, "Oxigênio em nível crítico")
 
 # ESTABILIDADE:
 def analisar_estabilidade(valor):
@@ -81,7 +81,7 @@ def analisar_estabilidade(valor):
     elif valor >= limites["estabilidade"]["atencao_min"]:
         return ("ATENÇÃO", 1, "Estabilidade operacional reduzida")
     else:
-        return ("Crítico", 2, "Estabilidade operacional crítica")
+        return ("CRÍTICO", 2, "Estabilidade operacional crítica")
 
 
 # Função para classificar o ciclo com base na pontuação.
@@ -91,39 +91,40 @@ def classificar_ciclo(pontuacao):
     elif pontuacao <= 5:
         return "MISSÃO EM ATENÇÃO"
     else:
-        return "MISSÃO CRÍICA"
+        return "MISSÃO CRÍTICA"
 
 
 # Função para gerar recomendação para status individuais.
 def gerar_recomendacao_para_ciclo(status_por_area):
     """
-        status_por_area: lista de tuplas (classificacao, mensagem) para cada área.
-        Retorna uma string com recomendação adequada ao ciclo.
-        """
+    status_por_area: lista de tuplas (classificacao, pontos, mensagem) para cada área.
+    Retorna uma string com recomendação adequada ao ciclo.
+    """
     criticas = []
     atencao = []
 
-    for i, (classif, _) in enumerate(status_por_area):
+    # CORREÇÃO: desempacotar os 3 valores
+    for i, (classif, _, _) in enumerate(status_por_area):
         area = areas_monitoradas[i]
         if classif == "CRÍTICO":
             criticas.append(area)
         elif classif == "ATENÇÃO":
             atencao.append(area)
 
-    if "Temperatur interna" in criticas:
+    if "Temperatura interna" in criticas:
         return "Verificar controle térmico da missão com urgência."
     if "Comunicação com a base" in criticas:
         return "Tentar restabelecer contato com a base imediatamente."
     if "Sistema de energia" in criticas:
         return "Ativar modo de economia de energia e verificar fontes."
-    if "Suporte de oxigenio" in criticas:
+    if "Suporte de oxigênio" in criticas:
         return "Adicionar protocolo de suporte à vida."
-    if "Estabilidade" in criticas:
+    if "Estabilidade operacional" in criticas:
         return "Reduzir operações não essenciais e estabilizar sistemas."
 
     if len(atencao) >= 3:
-        return "Monitorar sistemas em atenção e preparar pleno de contigência."
-    elif len(criticas) > 0:
+        return "Monitorar sistemas em atenção e preparar plano de contingência."
+    elif len(atencao) > 0:
         return "Verificar sistemas em atenção e tomar medidas corretivas."
     else:
         return "Manter operação normal e continuar monitoramento."
@@ -215,8 +216,7 @@ def gerar_relatorio_final(dados, pontuacoes_ciclos, status_por_ciclos, pontuacao
     print("\n" + "=" * 60)
 
 
-# Programa principal>
-
+# Programa principal
 def main():
     print("=" * 60)
     print("MISSION CONTROL AI".center(60))
